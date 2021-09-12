@@ -43,16 +43,44 @@ class CreateEmployeesTable extends Migration
             $table->string('permanent_address');
             $table->string('permanent_address_english');
 
-            // academic information
+            // degree relted information
 
+            $table->string('academic_area');
+            $table->string('academic_area_english');
+            $table->string('university');
+            $table->string('university_english');
+            $table->string('degree');
+            $table->string('degree_country');
+            $table->string('duration_of_study');
+            $table->date('start_date');
+            $table->date('graduation_date');
 
+            // academic infor
 
+            $table->string('academic_rank');
+            $table->string('subject_of_academic_research');
+            $table->string('type_of_academic_research');
+            $table->date('registration_of_academic_research');
+            $table->date('completion_of_academic_research');
+            $table->date('submission_of_academic_research');
+            $table->date('year_of_academic_research');  //unnecessary ??? TODO:
 
+            $table->string('rewards')->nullable();  
+            $table->string('pernalties')->nullable();
 
+            $table->string('post');  //bast 
+            $table->string('post_title');  //bast 
+            $table->string('post_title_english');  //bast 
+            $table->string('post_code');  //bast 
+            $table->string('designation');  
+            $table->string('teaching_univeristy');  
+            $table->string('teaching_faculty');  
+            $table->string('teaching_department');  
+            $table->string('hiring_number'); //ّنمبر حکم تقرر  
+            $table->string('hiring_accademic_rank');   
+            $table->date('hiring_date');   
+            $table->date('reacing_to_accademic_rank_date');   
 
-
-            $table->string('academic_rank')->nullable();
-            $table->string('city')->nullable();
             $table->timestamps();
         });
     }
