@@ -1,5 +1,9 @@
 ## About University-Employees-Records-Finder
 
+This application is built to help the administrative stuff of the univiversity to find/filter employees' records quickly
+and have access to all the necessary information of the employees such the Education, Academic Ranks, Addresses, Publications, and ect. 
+
+
 
 ## Learning Laravel
 
