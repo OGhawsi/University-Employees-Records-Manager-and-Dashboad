@@ -1,121 +1,98 @@
 <template>
-    <div class="max-w-7xl mx-auto px-6 sm:px-12">
-      <div class="flex justify-between mt-12 mb-4">
-          <h1 class="text-2xl font-bold  text-gray-500">Employees</h1>
-          <Link :href="route('employee.create')" class="bg-indigo-500 hover:bg-yellow-600 text-white text-sm py-3 px-6 rounded shadow">Add Employee</Link>
-      </div>
-      <hr class="mb-12">
-
-        <div class="flex">
-    
-            <!-- local sidebar with filters -->
-            <div class=" flex justify-between  w-72  flex-shrink-0">
-               <div class="flex flex-col mx-4 my-10 space-y-4">
-                <!-- search box with filter  -->
-                    <div>
-                        <input type="search" name="search" id="search" placeholder="search here..." class="w-60">
-                    </div>
-                    <div class="flex">
-                        <select name="filter" id="filter" v-model="query.faculty">
-                            <option disabled>Filter by</option>
-                            <option value="">All Employees</option>
-                            <option value="edu">Educatoin Facluty</option>
-                            <option value="eng">Engineering Facluty</option>
-                        </select>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <input type="checkbox"  name="professor" id="professor" value="professor" v-model="query.rank">
-                        <label for="professor">professor</label>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <input type="checkbox"  name="assistant_professor" id="assistant_professor" value="assitant_professor" v-model="query.rank">
-                        <label for="assistant_professor">assitant professor</label>
-                    </div>
-                    
-                    
-               </div>
-    
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 py-8">
+        <div class=" mb-4">
+           <h1 class="text-base font-medium text-gray-500">
+                <Link
+                :href="route('dashboard')"
+                class="text-sky-500 hover:underline"
+                >
+                Dashboard
+                </Link>
+                / Employees
+            </h1>
+        </div>
+    <div class="flex flex-col items-start mb-12">
+        <!-- search box   -->
+        <div class="flex justify-between items-end w-full mb-4">
+            <div class="flex-shrink-0 rounded-lg flex items-center justify-start w-96 bg-white">
+                <svg xmlns="http://www.w3.org/2000/svg" 
+                        class="ml-3 h-5 w-5 flex-grow-0 flex-shrink-0 stroke-current" 
+                        fill="none" 
+                        viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" 
+                            stroke-width="1" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <input
+                    class="w-full rounded-md border-none focus:ring-0 h-10 placeholder-gray-400 text-sm" 
+                    type="text"
+                    v-model="params.employee_search"
+                    name="faculty_search" 
+                    id="faculty_search"
+                    placeholder="search employee name... "
+                >
+                <div
+                    v-if="params.employee_search"
+                    @click="this.params.employee_search = null" 
+                    class="space-x-1 px-3 py-2 text-sm group hover:text-gray-900 
+                            hover:bg-white text-gray-700 cursor-pointer ">
+                        <!-- <span> esc</span> -->
+                        <svg xmlns="http://www.w3.org/2000/svg" 
+                            class="h-5 w-5 stroke-current group-hover:text-gray-900 text-gray-700" 
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" 
+                                stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                </div>
             </div>
-    
-            <!-- main table display  -->
-            <div class=" bg-white w-full flex-shrink-1 rounded-lg p-10 shadow-md">
-                <!-- <span v-if="employees.length"> total employees: {{ employees.length }}</span> -->
-
-                <table class="w-full whitespace-nowrap">
-                    <tr class="text-left font-bold ">
-                        <th class="px-6 pt-6 pb-4">Name</th>
-                        <th class="px-6 pt-6 pb-4"> Rank</th>
-                        <th class="px-6 pt-6 pb-4"> City</th>
-                        <th class="px-6 pt-6 pb-4"> Faculty</th>
-                    </tr>
-                    <tr v-for="employee in employees" class="hover:bg-gray-100 focus-within:bg-gray-100">
-                        <td class="border-t">
-                            <Link class="px-6 py-4 flex items-center focus:text-indigo-500" :href="route('employee.edit', employee.id)">
-                                {{ employee.name }}
-                            </Link>
-                        </td>
-                        <td class="border-t">
-                            <Link class="px-6 py-4 flex items-center focus:text-indigo-500" :href="route('employee.edit', employee.id)">
-                                {{ employee.rank }}
-                            </Link>
-                        </td>
-                        <td class="border-t">
-                            <Link class="px-6 py-4 flex items-center focus:text-indigo-500" :href="route('employee.edit', employee.id)">
-                                {{ employee.city }}
-                            </Link>
-                        </td>
-                        <td class="border-t">
-                            <Link class="px-6 py-4 flex items-center focus:text-indigo-500" :href="route('employee.edit', employee.id)">
-                                {{ employee.faculty }}
-                            </Link>
-                        </td>
-                    </tr>
-                </table>
-                
-            <!-- pagination links  -->
+            <div>
+                <Link :href="route('employee.create')" class="bg-sky-500 transition-colors hover:bg-yellow-600 text-white text-sm py-2 px-4 rounded-md shadow">Add Employee</Link>
             </div>
         </div>
+        
+        <div class="bg-white rounded-lg w-full px-10"> 
+            <employee-list :employees="this.employees" />
+        </div>
+
+    </div>
     </div>
 </template>
-
 <script>
-    import { Link } from '@inertiajs/inertia-vue3';
-    import pickBy from 'lodash/pickBy';
-    import throttle from 'lodash/throttle';
+import pickBy from 'lodash/pickBy';
+import throttle from 'lodash/throttle';
+import { Link } from '@inertiajs/inertia-vue3';
+import Icon from '@/Components/Icon.vue';
+import EmployeeList from '@/Components/EmployeeList.vue';
+
 export default {
     components : {
         Link,
+        Icon,
+        EmployeeList
     },
     props: {
         employees: Object,
+        errors: Object,
         // filters: Object,
     }, 
     data() {
         return {
-            query: {
-                rank:[],
-                'faculty': null,
-            }
+            params: {
+                employee_search: null,
+            },
         }
     },
     watch: {
-        query: {
-            handler: throttle(function() {
-                let que = pickBy(this.query)
-                this.$inertia.get(route('employee.index'), que , { preserveState: true });
-            }, 2000),
+        params: {
+             handler: throttle(function() {
+                this.$inertia.get(route('employee.index'), pickBy(this.params) , { 
+                    preserveState: true,
+                    preserveScroll: true,
+                    replace: true });
+            }, 500),
             deep: true,
-        }
+        },
     },
-    computed: {
-        
-    },
-    methods: {
-        filter() {
-            // let que = pickBy(this.query)
-            // this.$inertia.get(route('crud'), que );
-        }
-    },
+
 
 
 }

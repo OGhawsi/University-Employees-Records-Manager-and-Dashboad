@@ -21,8 +21,14 @@
         "lodash": "^4.17.19",
         "postcss": "^8.2.13",
         "postcss-import": "^14.0.1",
-        "tailwindcss": "^2.1.2",
+        "tailwindcss": "^2.2.0",
         "vue": "^3.0.5",
         "vue-loader": "^16.1.2"
+    },
+    "dependencies": {
+        "chartjs": "^0.3.24",
+        "highcharts": "^9.3.1",
+        "tailwindcss-scrollbar": "^0.1.0",
+        "vue-chartkick": "^1.1.0"
     }
 }

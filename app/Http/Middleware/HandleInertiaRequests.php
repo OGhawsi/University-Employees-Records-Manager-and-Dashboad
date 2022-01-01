@@ -2,6 +2,8 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Faculty;
+use App\Models\University;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 
@@ -37,6 +39,10 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $request->user(),
             ],
+            'faculties' => [
+                'names' => Faculty::all(['id', 'name'])
+            ],
+            'university' =>University::first(),
         ]);
     }
 }
