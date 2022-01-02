@@ -20,13 +20,11 @@ class AttachmentController extends Controller
 
     public function store(Request $request, Employee $employee)
     {
-        if (Attachment::count() > 10) {
-            return 'error';
-        }
+      
         request()->validate([
-            'file' => ['file', 'max:102400', 'mimes:jpg,jpeg,png,bmp,tiff,pdf']
+            'file' => ['file', 'max:76000', 'mimes:jpg,jpeg,png,bmp,tiff,pdf']
         ], [
-            'max' => 'File can not be larger than 100MB',
+            'max' => 'File can not be larger than 75 MB',
             'mimes' => 'Upload images and PDF only'
         ]);
          

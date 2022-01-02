@@ -21,6 +21,16 @@ class RankController extends Controller
 
     public function store(Employee $employee)
     {
+        // update the previous ranks not to be the current one only if the new rank is
+        // acheived by the completion date. 
+
+        if (request('completion_of_academic_research')) {
+            DB::table('employee_rank')
+            ->where('employee_id', '=', $employee->id)
+            ->update(['current' => 0]);
+        }
+        
+
         $data = request()->validate([
             'rank_id' => [
                 Rule::unique('employee_rank')->where(function ($query) use($employee) {
@@ -32,7 +42,7 @@ class RankController extends Controller
             'subject_of_academic_research' => ['max:255'], 
             'registration_of_academic_research' => ['date', 'nullable'],
             'completion_of_academic_research' => ['date', 'nullable'] ,
-            'current' => ['boolean'],
+            'current' => request('completion_of_academic_research') ? true : false,
         ]);
 
         $employee->ranks()->attach(request('rank_id'), $data);
@@ -54,11 +64,13 @@ class RankController extends Controller
 
     public function update(Employee $employee)
     {
+        // update the previous ranks not to be the current one only if the new rank is
+        // acheived by the completion date. 
+
         $data = request()->validate([
             'subject_of_academic_research' => ['required','max:255'], 
             'registration_of_academic_research' => ['date', 'nullable'],
             'completion_of_academic_research' => ['date', 'nullable'] ,
-            'current' => ['boolean']
         ]);
 
         if (request('same_rank_id') != request('changed_rank_id')) {
@@ -84,6 +96,9 @@ class RankController extends Controller
 
     public function destroy($pivot)
     {
+        //  set the second top rank as the current rank first and then delete this one
+        // TODO: solve this problem after notification component. 
+      
         DB::table('employee_rank')->where('id', $pivot)->delete();
         return redirect()->route('employee.index');
     }
