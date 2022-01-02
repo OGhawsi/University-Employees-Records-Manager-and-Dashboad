@@ -10,21 +10,7 @@ use Inertia\Inertia;
 
 class AttachmentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+  
     public function create(Employee $employee)
     {
         return Inertia::render('Attachment/UploadMultiple', [
@@ -32,31 +18,30 @@ class AttachmentController extends Controller
         ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request, Employee $employee)
     {
+        if (Attachment::count() > 10) {
+            return 'error';
+        }
         request()->validate([
-            'file' => ['file', 'max:10240', 'mimes:jpg,jpeg,png,bmp,tiff,pdf']
+            'file' => ['file', 'max:102400', 'mimes:jpg,jpeg,png,bmp,tiff,pdf']
         ], [
-            'max' => 'File can not be larger than 10MB',
+            'max' => 'File can not be larger than 100MB',
             'mimes' => 'Upload images and PDF only'
         ]);
          
         $file = $request->file('file');    
 
+        // set up the file name
         $file_name = time().'_'.$file->getClientOriginalName();
 
+        // create directory for the user
         $dir = "public/attachments/{$employee->id}";
 
+        // store the file in the directory created
          $path = $file->storeAs($dir, $file_name);
 
-        // $path = Storage::putFile($dir, $file, 'public');
-
+        //  create front end url to access images and files
         $preview_url = url("storage/attachments/{$employee->id}/$file_name");
 
         Attachment::create([
@@ -68,47 +53,12 @@ class AttachmentController extends Controller
              'path' => $path,
          ]);
     }
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Attachment  $attachment
-     * @return \Illuminate\Http\Response
-     */
+
     public function download(Attachment $attachment)
     {
-        // ddd($attachment->preview_url);
-        // ddd($attachment->path);
         return Storage::download($attachment->path);
     }
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Attachment  $attachment
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Attachment $attachment)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Attachment  $attachment
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Attachment $attachment)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Attachment  $attachment
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy(Attachment $attachment)
     {
         Storage::delete($attachment->path);

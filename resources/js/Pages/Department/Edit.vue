@@ -57,7 +57,7 @@
                     :fetchingRoute="route('department.edit', this.department.id)"
                     @selectId="selectEmployee">
                   </searchable-dropdown>
-                  
+                  <div v-if="errors.employee_id" class="form-error">Employee should be either dean or HOD</div>
                 </div>
               <div class="flex flex-col mb-6 space-y-1">
                   <label for="established">Established Date</label>

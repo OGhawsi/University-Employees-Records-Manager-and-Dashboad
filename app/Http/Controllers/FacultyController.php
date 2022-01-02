@@ -48,7 +48,6 @@ class FacultyController extends Controller
         return Inertia::render('Faculty/Create', [
             'employees' => Employee::where('first_name_english','Like', "%$term%")
                                     ->limit(8)
-                                 
                                     ->get(['id','first_name_english', 'last_name_english']),
         ]);
     }
@@ -59,16 +58,13 @@ class FacultyController extends Controller
                 'name' => ['required','max:50','unique:faculties,name'],
                 'email' => ['required','email', 'max:75','unique:faculties,email'],
                 'established' => ['required','date'],
-                'employee_id' => ['nullable', 'unique:faculties,employee_id'],
+                'employee_id' => ['nullable', 'unique:faculties,employee_id', 'unique:departments,employee_id'],
                 'university_id' => ['required'],
             ])
         );
         return redirect()->route('faculty.index', 1);
     }
-    // public function show(Faculty $faculty)
-    // {
-    //     return Inertia::render('Faculty/Show');
-    // }
+
     public function edit(Faculty $faculty)
     {
         $universities = University::all(['id','name']);
@@ -77,6 +73,7 @@ class FacultyController extends Controller
 
         if (request()->has('term')) {
             $employees = Employee::where('first_name_english','Like', "%$term%")
+                ->orWhere('last_name_english', 'Like', "%$term%")
                 ->limit(6)
                 ->get(['id','first_name_english', 'last_name_english']);
         }
@@ -101,7 +98,7 @@ class FacultyController extends Controller
                 'name' => ['required','max:50', 'unique:faculties,name,'. $faculty->id],
                 'email' => ['required','email', 'max:75'],
                 'established' => ['required','date'],
-                'employee_id' => ['nullable', 'unique:faculties,employee_id,'.$faculty->id],
+                'employee_id' => ['nullable', 'unique:faculties,employee_id,'.$faculty->id, 'unique:departments,employee_id'],
                 'university_id' => ['required'],
             ])
         );

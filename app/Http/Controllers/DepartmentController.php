@@ -31,7 +31,7 @@ class DepartmentController extends Controller
                 'name' => ['required','max:50','unique:departments,name'],
                 'email' => ['required','email', 'max:75','unique:departments,email'],
                 'established' => ['required','date'],
-                'employee_id' => ['nullable', 'unique:departments,employee_id'],
+                'employee_id' => ['nullable', 'unique:departments,employee_id', 'unique:faculties,employee_id'],
                 'faculty_id' => ['required'],
                 'university_id' => ['required'],
             ])
@@ -50,6 +50,7 @@ class DepartmentController extends Controller
 
         if (request()->has('term')) {
             $employees = Employee::where('first_name_english','Like', "%$term%")
+                ->orWhere('last_name_english', 'Like', "%$term%")
                 ->limit(8)
                 ->get(['id','first_name_english', 'last_name_english']);
         }
@@ -80,7 +81,7 @@ class DepartmentController extends Controller
                 'name' => ['required','max:50', 'unique:departments,name,'.$department->id],
                 'email' => ['required','email', 'max:75' , 'unique:departments,email,'.$department->id],
                 'established' => ['required','date'],
-                'employee_id' => ['nullable', 'unique:departments,employee_id,'.$department->id],
+                'employee_id' => ['nullable', 'unique:departments,employee_id,'.$department->id, 'unique:faculties,employee_id'],
                 'faculty_id' => ['required'],
                 'university_id' => ['required'],
             ])

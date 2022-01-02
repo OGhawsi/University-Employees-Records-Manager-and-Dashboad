@@ -29,6 +29,7 @@ This app has the following sections:
 - Reports  ( Filtering records based on different parameters )
 - Faculties
 - Departments
+- University (which is the name of the app)
 - Settings
 
 All of the above, are just different CRUD operations connected with each other logically.
@@ -45,7 +46,7 @@ The requirements were collected from the Kandahar University only, but this app 
 
 ## Financial Support
 Help the free education sector in Afghanistan through supporting 
-the developer this app financially with as low as 1 USD. 
+the developer of this app financially with as low as 1 USD. 
 Thank You. 
 
 ## License

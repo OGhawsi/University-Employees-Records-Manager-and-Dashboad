@@ -9,13 +9,10 @@ class Faculty extends Model
 {
     use HasFactory;
     
-    
-
     public function departments()
     {
         return $this->hasMany(Department::class);
     }
-
 
     public function university()
     {
@@ -31,8 +28,4 @@ class Faculty extends Model
     {
         return $this->belongsTo(Employee::class, 'employee_id','id');
     }
-
-
-
-    
 }

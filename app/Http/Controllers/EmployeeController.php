@@ -40,10 +40,10 @@ class EmployeeController extends Controller
     {
         $faculties = Faculty::all(['id','name']);
 
-        $departments = [];
+        $departments = Department::query();
 
         if (request('relatedDepartment')) {
-            $departments = Department::where('faculty_id', '=',  request('relatedDepartment'))->get(['id','name']);
+            $departments -> where('faculty_id', '=',  request('relatedDepartment'))->get(['id','name']);
         }
 
         return Inertia::render('Employee/Create', [
