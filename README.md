@@ -1,34 +1,52 @@
-## About University-Employees-Records-Finder
+## About the University Employees Record Manager 
 
-This application is built to help the administrative stuff of the univiversity to find/filter employees' records quickly
-and have access to all the necessary information of the employees such the Education, Academic Ranks, Addresses, Publications, and ect. 
+This application is built with Laravel, Vue JS, Inertia JS, and Tailwind CSS  to help the administrative staff of the university to find/filter employees' records quickly based on different parameters. 
 
+## Motivation for building this app
 
+Kandahar University, located in Kandahar, Afghanistan, had employees data stored across multiple spreadsheets.   As the university has no budget to spend on app like this, they asked me to help them with their data problem and make a central app for which should enable them to find the records instantly, based on different parameters.
 
-## Learning Laravel
+So I took this opportunity to show case my web development skills through building something that can actually help someone.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## What isn't it? 
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+This is not a traditional employee management system. This app does not have attendance, classes, subjects or any other sections, that you might expect in an employee management system. 
 
-## Laravel Sponsors
+## What is it?
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+This app helps provide employees data through the report section through an easy to use interface. 
 
+This app has the following sections: 
 
-## Contributing
+- Dashboard
+- Employee
+    - Basic Information
+    - Education/Degree Details (Bachelor, Masters, Ph.D.)
+    - Academic Ranks (Assistant Prof. Associate Prof. Professor, etc.)
+    - Address Info
+    - Profile
+    - Attachment/Documents
+- Reports  ( Filtering records based on different parameters )
+- Faculties
+- Departments
+- Settings
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+All of the above, are just different CRUD operations connected with each other logically.
 
-## Code of Conduct
+The requirements were collected from the Kandahar University only, but this app can be directly usable by all the universities across Afghanistan, because, all of these universities have the same administrative structure and work under the ministry of higher educations of Afghanistan.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Future Enhancements
 
+- Adding tests cases
+- Adding roles and permisions
+- Adding internationalization support
+- Enhancing the UI
+- Add vue teleport
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Financial Support
+Help the free education sector in Afghanistan through supporting 
+the developer this app financially with as low as 1 USD. 
+Thank You. 
 
 ## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The Laravel framework and this app are open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
