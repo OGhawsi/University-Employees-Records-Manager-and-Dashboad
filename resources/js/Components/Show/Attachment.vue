@@ -1,25 +1,24 @@
 <template>
   <div>
-    <div v-if="!attachments[0]">
-      <!-- big drag and drop -->
-    <Link :href="route('attachment.create', this.employee.id)">Upload Files</Link>
-        
-    </div>
-    <div v-else class="flex justify-between items-start">
-      <!-- show docs -->
-      <div class="w-full">
-        <div class="mb-6">
-          <!-- title and button -->
-          <div class="flex justify-between">
-            <span class="text-xl font-bold tracking-wider"
-              >Documents & Uploads</span
-            >
-                <Link :href="route('attachment.create', this.employee.id)">Upload Files</Link>
+	<div class="flex justify-between">
+		<span class="text-lg font-bold tracking-wide">Documents and Files</span>
+		<Link :href="route('attachment.create', this.employee.id)" class="flex items-center space-x-1 text-sky-500 hover:underline">
+			<icon name="paper-clip" class=" h-5 w-5" />
+			<span class="text-sm font-medium capitalize">Upload Files</span>
+		</Link>
+	</div>
 
-          </div>
-          <div class="w-full border-t-2 border-gray-400 my-1"></div>
-          <!-- table to show data -->
-          <div class="flex flex-col">
+    <div v-if="!attachments[0]" class="border-2 rounded-lg mt-3 border-dashed border-sky-500 px-6 py-3">
+      <!-- big drag and drop -->
+		<div class="text-sky-500 hover:underline cursor-pointer hover:text-sky-600">
+			<Link :href="route('attachment.create', this.employee.id)" class="flex items-center space-x-1 text-sky-500 hover:underline">
+			<icon name="paper-clip" class=" h-5 w-5" />
+			<span class="text-sm font-medium capitalize">Upload Files</span>
+			</Link>
+		</div>
+    </div>
+
+    <div v-else class="flex flex-col border-t-3 border-sky-500">
             <div>
               <table class="w-full whitespace-nowrap">
                 <tr class="text-left text-gray-600 font-semibold">
@@ -34,7 +33,7 @@
                   :key="index"
                 >
                   <td class="border-t px-6 py-2">
-                    <img :src="attachment.preview_url" class="h-10 w-10" alt="" />
+                    <img :src="attachment.preview_url" class="" alt="" />
                   </td>
                   <td class="border-t px-6 py-2">
                     <Link class="focus:text-indigo-500">
@@ -48,27 +47,26 @@
                   </td>
                   
                   <td class="border-t px-6 py-2 text-center">
-                    <button @click="remove(attachment.id)">Delete</button>
+                    <button @click="remove(attachment.id)" class="flex items-center space-x-1">
+						<icon name="trash" class="text-gray-500 h-4 w-4" />
+						<span>Delete</span>
+					</button>
                   </td>
                   <td class="border-t px-6 py-2 text-center">
-                    <!-- <Link class="focus:text-indigo-500"  target="_blank">
-                      Donwload
-                    </Link> -->
-                    <a :href="route('attachment.download', attachment)" class="rounded-lg bg-gray-200 px-4 py-1">
-                        Download
+                    <a :href="route('attachment.download', attachment)" class="rounded-lg space-x-1 bg-gray-200 px-4 py-1  flex items-center">
+                        <icon name="download" class="text-gray-500 h-4 w-4" />
+                       <span> Download</span>
                     </a>
                   </td>
                   <td class="border-t px-6 py-2 text-center">
-                    <a :href="attachment.preview_url" target="_blank" class="rounded-lg bg-gray-200 px-4 py-1">
-                        View
+                    <a :href="attachment.preview_url" target="_blank" class="rounded-lg space-x-1 bg-gray-200 px-4 py-1 flex items-center">
+						<icon name="photograph" class="text-gray-500 h-4 w-4" />
+                        <span>View</span>
                     </a>
                   </td>
                   
                 </tr>
               </table>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -76,9 +74,11 @@
 
 <script>
 import { Link } from "@inertiajs/inertia-vue3";
+import Icon from '@/Components/Icon.vue'
 export default {
   components: {
     Link,
+	Icon
   },
   props: {
     attachments: Object,
@@ -87,7 +87,9 @@ export default {
  
   methods: {
     remove(attachment) {
-        this.$inertia.delete(route('attachment.delete',attachment))
+		if (confirm("Are you sure ?")) {
+			this.$inertia.delete(route('attachment.delete',attachment))
+		}
     },
     
   },

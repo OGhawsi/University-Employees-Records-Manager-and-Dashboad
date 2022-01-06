@@ -1,8 +1,27 @@
 <template>
   <div class="max-w-7xl mx-auto px-6 sm:px-12 py-12">
-    <div class="flex justify-between items-center p-2"> 
-        <div>Employee/Jon/Upload Files</div>
-        <Link :href="route('employee.show', this.employee.id)"> Go Back </Link>
+    <div class=" mb-4 flex justify-between items-center">
+        <h1 class="text-base font-medium text-gray-500">
+            <Link
+            :href="route('dashboard')"
+            class="text-sky-500 hover:underline"
+            >
+            Dashboard 
+            </Link>
+			/
+			<Link :href="route('employee.show', employee.id)" class="text-sky-500 hover:underline">
+				{{employee.first_name_english}}'s Profile
+			</Link>
+            / Upload Files
+        </h1>
+		<div>
+			<Link :href="route('employee.show', employee.id)" class="text-sky-500 hover:underline flex items-center space-x-1">
+			  <icon name="chavron-left" />
+			  <span>
+				Return to profile
+			  </span>
+			</Link>
+		</div>
     </div>
     <div class="bg-white px-12 py-10 rounded-md  shadow-md ">
         <div
@@ -76,6 +95,7 @@
 
 <script>
 import { Link } from "@inertiajs/inertia-vue3"
+import Icon from '@/Components/Icon.vue'
 import axios from "axios";
 export default {
   props: {
@@ -83,6 +103,7 @@ export default {
   },
   components: {
       Link,
+	  Icon
   },
  
   data() {

@@ -39,7 +39,7 @@
             <input ref="files" @input="onSelectedFiles" multiple name="files" type="file" id="files" class=" sr-only">
         </label>
       <div class="text-sm text-center">
-        Max size should not be greater than 100 MB
+        Max size should not be greater than 75 MB
       </div>
     </div>
     <ul class="bg-gray-100 my-6 divide-y divide-y-gray-200 rounded shadow">
