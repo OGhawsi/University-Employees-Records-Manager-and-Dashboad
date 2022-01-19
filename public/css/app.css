@@ -878,11 +878,6 @@ select {
 	margin-bottom: 0.75rem;
 }
 
-.my-1 {
-	margin-top: 0.25rem;
-	margin-bottom: 0.25rem;
-}
-
 .my-4 {
 	margin-top: 1rem;
 	margin-bottom: 1rem;
@@ -1178,16 +1173,16 @@ select {
 	width: auto;
 }
 
-.w-80 {
-	width: 20rem;
+.w-48 {
+	width: 12rem;
 }
 
 .w-full {
 	width: 100%;
 }
 
-.w-48 {
-	width: 12rem;
+.w-80 {
+	width: 20rem;
 }
 
 .w-10 {
@@ -1599,10 +1594,6 @@ select {
 	border-bottom-width: 1px;
 }
 
-.border-t-2 {
-	border-top-width: 2px;
-}
-
 .border-t-3 {
 	border-top-width: 3px;
 }
@@ -1749,12 +1740,12 @@ select {
 	padding: 1.5rem;
 }
 
-.p-4 {
-	padding: 1rem;
-}
-
 .p-1 {
 	padding: 0.25rem;
+}
+
+.p-4 {
+	padding: 1rem;
 }
 
 .p-2 {
@@ -1798,16 +1789,6 @@ select {
 	padding-right: 1.5rem;
 }
 
-.px-3 {
-	padding-left: 0.75rem;
-	padding-right: 0.75rem;
-}
-
-.px-0 {
-	padding-left: 0px;
-	padding-right: 0px;
-}
-
 .py-1 {
 	padding-top: 0.25rem;
 	padding-bottom: 0.25rem;
@@ -1816,6 +1797,16 @@ select {
 .py-3 {
 	padding-top: 0.75rem;
 	padding-bottom: 0.75rem;
+}
+
+.px-3 {
+	padding-left: 0.75rem;
+	padding-right: 0.75rem;
+}
+
+.px-0 {
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
 .px-1 {
@@ -1846,6 +1837,11 @@ select {
 .py-10 {
 	padding-top: 2.5rem;
 	padding-bottom: 2.5rem;
+}
+
+.py-6 {
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
 }
 
 .px-10 {
@@ -1977,12 +1973,12 @@ select {
 	font-weight: 500;
 }
 
-.font-bold {
-	font-weight: 700;
-}
-
 .font-semibold {
 	font-weight: 600;
+}
+
+.font-bold {
+	font-weight: 700;
 }
 
 .font-black {
@@ -2349,11 +2345,6 @@ select {
 	background-color: rgba(51, 65, 85, var(--tw-bg-opacity));
 }
 
-.hover\:bg-gray-200:hover {
-	--tw-bg-opacity: 1;
-	background-color: rgba(226, 232, 240, var(--tw-bg-opacity));
-}
-
 .hover\:bg-gray-100:hover {
 	--tw-bg-opacity: 1;
 	background-color: rgba(241, 245, 249, var(--tw-bg-opacity));
@@ -2362,6 +2353,11 @@ select {
 .hover\:bg-sky-100:hover {
 	--tw-bg-opacity: 1;
 	background-color: rgba(224, 242, 254, var(--tw-bg-opacity));
+}
+
+.hover\:bg-gray-200:hover {
+	--tw-bg-opacity: 1;
+	background-color: rgba(226, 232, 240, var(--tw-bg-opacity));
 }
 
 .hover\:bg-gray-50:hover {

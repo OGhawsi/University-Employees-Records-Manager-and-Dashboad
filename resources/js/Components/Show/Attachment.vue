@@ -21,11 +21,11 @@
     <div v-else class="flex flex-col border-t-3 border-sky-500">
             <div>
               <table class="w-full whitespace-nowrap">
-                <tr class="text-left text-gray-600 font-semibold">
-                  <th class="px-6 pt-4 pb-4"></th>
-                  <th class="px-6 pt-4 pb-4">Document Name</th>
-                  <th class="px-6 pt-4 pb-4">Size</th>
-                  <th class="px-6 pt-4 pb-4 text-center" colspan="2">Actions</th>
+                <tr class="text-left text-sky-800 font-semibold bg-sky-100">
+                  <th class="px-6 py-2"></th>
+                  <th class="px-6 py-2">Document Name</th>
+                  <th class="px-6 py-2">Size</th>
+                  <th class="px-6 py-2 text-center">Actions</th>
                 </tr>
                 <tr
                   class="hover:bg-gray-100 focus-within:bg-gray-100"
@@ -33,7 +33,7 @@
                   :key="index"
                 >
                   <td class="border-t px-6 py-2">
-                    <img :src="attachment.preview_url" class="" alt="" />
+                    <img :src="attachment.preview_url" class="w-8 h-6" alt="" />
                   </td>
                   <td class="border-t px-6 py-2">
                     <Link class="focus:text-indigo-500">
@@ -46,27 +46,24 @@
                     </Link>
                   </td>
                   
-                  <td class="border-t px-6 py-2 text-center">
+                  <td class="border-t px-6 py-2 flex justify-end space-x-1 items-center">
                     <button @click="remove(attachment.id)" class="flex items-center space-x-1">
-						<icon name="trash" class="text-gray-500 h-4 w-4" />
-						<span>Delete</span>
-					</button>
-                  </td>
-                  <td class="border-t px-6 py-2 text-center">
-                    <a :href="route('attachment.download', attachment)" class="rounded-lg space-x-1 bg-gray-200 px-4 py-1  flex items-center">
-                        <icon name="download" class="text-gray-500 h-4 w-4" />
-                       <span> Download</span>
+                      <icon name="trash" class="text-red-500 h-4 w-4" />
+                      <span>Delete</span>
+                    </button>
+                 
+                    <a :href="route('attachment.download', attachment)" class="rounded-lg space-x-1 px-4 py-1  flex items-center">
+                        <icon name="download" class="text-yellow-500 h-4 w-4" />
+                        <span> Download</span>
                     </a>
-                  </td>
-                  <td class="border-t px-6 py-2 text-center">
-                    <a :href="attachment.preview_url" target="_blank" class="rounded-lg space-x-1 bg-gray-200 px-4 py-1 flex items-center">
-						<icon name="photograph" class="text-gray-500 h-4 w-4" />
+                  
+                    <a :href="attachment.preview_url" target="_blank" class="rounded-lg space-x-1 px-4 py-1 flex items-center">
+                        <icon name="photograph" class="text-sky-500 h-4 w-4" />
                         <span>View</span>
                     </a>
                   </td>
-                  
-                </tr>
-              </table>
+            </tr>
+        </table>
       </div>
     </div>
   </div>

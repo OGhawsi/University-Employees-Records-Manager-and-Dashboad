@@ -98,6 +98,8 @@ class RankController extends Controller
     {
         //  set the second top rank as the current rank first and then delete this one
         // TODO: solve this problem after notification component. 
+        // Current rank should not be deletable 
+        // change the current rank tag first then delete
       
         DB::table('employee_rank')->where('id', $pivot)->delete();
         return redirect()->route('employee.index');
