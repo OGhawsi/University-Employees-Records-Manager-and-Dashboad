@@ -40,9 +40,9 @@ The requirements were collected from the Kandahar University only, but this app 
 - Clone the repository with `git clone`
 - Copy `.env.example` file to `.env` and edit database credentials there
 - Run `composer install`
-- Run `npm install & npm run dev`
 - Run php artisan `key:generate`
-- Run `php artisan migrate --seed`
+- Run `npm install & npm run dev`
+- Run `php artisan migrate --seed` the seeding might take a bit. 
 - That's it, use these creditionals to login and see the app from inside
     - Username: `admin@example.com`
     - Password: `password`
