@@ -36,6 +36,9 @@ All of the above, are just different CRUD operations connected with each other l
 
 The requirements were collected from the Kandahar University only, but this app can be directly usable by all the universities across Afghanistan, because, all of these universities have the same administrative structure and work under the ministry of higher educations of Afghanistan.
 
+## Installation
+- Clone the repo: 
+- `copy the env file`
 ### Future Enhancements
 
 - Adding tests cases
