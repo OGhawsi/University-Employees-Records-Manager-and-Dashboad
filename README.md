@@ -36,9 +36,14 @@ All of the above, are just different CRUD operations connected with each other l
 
 The requirements were collected from the Kandahar University only, but this app can be directly usable by all the universities across Afghanistan, because, all of these universities have the same administrative structure and work under the ministry of higher educations of Afghanistan.
 
-## Installation
-- Clone the repo: 
-- `copy the env file`
+## Usage & Instalation 
+- Clone the repository with `git clone`
+- Copy `.env.example` file to `.env` and edit database credentials there
+- Run `composer install`
+- Run `npm install & npm run dev`
+- Run php artisan key:generate
+- Run `php artisan migrate --seed`
+
 ### Future Enhancements
 
 - Adding tests cases
