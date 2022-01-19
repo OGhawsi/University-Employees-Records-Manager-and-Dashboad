@@ -9,6 +9,8 @@ class Rank extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     const PROFESSOR = 7; // پوهاند
     const SENIOR_ASSOCIATE_PROFESSOR = 6; // بوهنوال
     const ASSOCIATE_PROFESSOR = 5; // پوهندوی

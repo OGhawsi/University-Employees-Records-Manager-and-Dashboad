@@ -39,7 +39,6 @@ class RankFactory extends Factory
                                             'Instructor'
                                         ]),
             'academic_rank' => $this->faker->unique()->numberBetween(1, 7),
-            
         ];
     }
 }

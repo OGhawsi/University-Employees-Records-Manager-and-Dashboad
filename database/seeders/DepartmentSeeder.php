@@ -13,6 +13,6 @@ class DepartmentSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Department::factory(1)->hasEmployees(20)->create();
+        // \App\Models\Department::factory(1)->hasEmployees(20)->create();
     }
 }
