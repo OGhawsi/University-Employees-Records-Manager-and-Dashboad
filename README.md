@@ -41,7 +41,7 @@ The requirements were collected from the Kandahar University only, but this app 
 - Copy `.env.example` file to `.env` and edit database credentials there
 - Run `composer install`
 - Run `npm install & npm run dev`
-- Run php artisan key:generate
+- Run php artisan `key:generate`
 - Run `php artisan migrate --seed`
 - That's it, use these creditionals to login and see the app from inside
     - Username: `admin@example.com`

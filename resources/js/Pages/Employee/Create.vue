@@ -400,7 +400,6 @@ export default {
 	data() {
 		return {
             sending: false, 
-			step: 1,
             language: null,
             selected_faculty: null,
 			form: this.$inertia.form( {
