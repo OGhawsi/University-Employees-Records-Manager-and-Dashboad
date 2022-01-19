@@ -43,6 +43,9 @@ The requirements were collected from the Kandahar University only, but this app 
 - Run `npm install & npm run dev`
 - Run php artisan key:generate
 - Run `php artisan migrate --seed`
+- That's it, use these creditionals to login and see the app from inside
+    - Username: `admin@example.com`
+    - Password: `password`
 
 ### Future Enhancements
 
