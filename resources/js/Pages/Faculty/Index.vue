@@ -33,7 +33,10 @@
                 <div class="  border-b border-gray-200 text-gray-500 text-sm pb-2 flex justify-between">
                     <div>Emplyees Academic Rank</div>
                     <div class="hover:underline transform  ease-in font-bold text-sky-500">
-                        <Link :href="route('faculty.create')">New Faculty</Link>
+                        <Link :href="route('faculty.create')" class="flex">
+                            <icon name="plus" />
+                            New Faculty
+                        </Link>
                     </div>
                 </div>
                 <div class="flex p-10">
@@ -78,7 +81,10 @@
                         <div class=" pt-4 border-b border-gray-200 text-gray-500 text-sm pb-2 mb-6 flex justify-between">
                             <div>Employees based on departments</div>
                             <div class="hover:underline font-bold text-sky-500">
-                                <Link :href="route('department.create', faculty.id)">New department</Link>
+                                <Link :href="route('department.create', faculty.id)" class="flex">
+                                      <icon name="plus" />
+                                        New department
+                                      </Link>
                             </div>
                         </div>
                         <column-chart adapter="highcharts"
@@ -93,7 +99,10 @@
                 <div class="pt-4 border-b border-gray-200 text-gray-500 text-sm pb-2 flex justify-between">
                     <div>All Departments </div>
                     <div class="underline font-bold text-sky-500">
-                        <Link :href="route('employee.create')">New employee</Link>
+                        <Link :href="route('employee.create')" class="flex">
+                              <icon name="plus" />
+                            New employee
+                        </Link>
                     </div>
                 </div>
                 <div class="py-10">
