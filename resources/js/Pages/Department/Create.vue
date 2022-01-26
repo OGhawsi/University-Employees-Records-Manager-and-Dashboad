@@ -109,14 +109,14 @@ export default {
   data() {
       return {
           sending: false,
-          form: {
+          form: this.$inertia.form({
             name : null,
             email : null,
             established : null,
             employee_id : null,
             faculty_id : this.faculty.id,
             university_id : 1,
-          }
+          })
       }
   },
 
@@ -126,8 +126,7 @@ export default {
 	  },
 
     submit() {
-      this.$inertia.post(this.route('department.store'), this.form, {
-        preserveScroll: true,
+      this.form.post(this.route('department.store'), this.form, {
         onStart: () => this.sending = true,
         onFinish: () => this.sending = false,
       })

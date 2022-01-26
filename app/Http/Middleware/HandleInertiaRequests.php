@@ -4,7 +4,9 @@ namespace App\Http\Middleware;
 
 use App\Models\Faculty;
 use App\Models\University;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Inertia\Middleware;
 
 class HandleInertiaRequests extends Middleware
@@ -39,6 +41,10 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $request->user(),
             ],
+            'toast' => function() {
+                return Session::get('toast');
+            },
+            'popstate' => false,
             'faculties' => [
                 'names' => Faculty::all(['id', 'name'])
             ],

@@ -25,18 +25,17 @@ class DepartmentController extends Controller
 
     public function store(Request $request)
     {
-
-        Department::create(
-            request()->validate([
-                'name' => ['required','max:50','unique:departments,name'],
-                'email' => ['required','email', 'max:75','unique:departments,email'],
-                'established' => ['required','date'],
-                'employee_id' => ['nullable', 'unique:departments,employee_id', 'unique:faculties,employee_id'],
-                'faculty_id' => ['required'],
-                'university_id' => ['required'],
-            ])
-        );
-        return redirect()->route('faculty.index', request('faculty_id'));
+        $validated_data = $request->validate([
+            'name' => ['bail','required','max:50','unique:departments,name'],
+            'email' => ['bail','required','email', 'max:75','unique:departments,email'],
+            'established' => ['bail','required','date'],
+            'employee_id' => ['bail','nullable', 'unique:departments,employee_id', 'unique:faculties,employee_id'],
+            'faculty_id' => ['required'],
+            'university_id' => ['required'],
+        ]);
+        
+        Department::create($validated_data);
+        return redirect()->route('faculty.index', request('faculty_id'))->with(['toast' => ['message' => 'Department added successfully']]);
     }
 
     public function edit(Department $department)
@@ -75,7 +74,7 @@ class DepartmentController extends Controller
 
     public function update( Department $department)
     {
-        
+         
         $department->update(
             request()->validate([
                 'name' => ['required','max:50', 'unique:departments,name,'.$department->id],

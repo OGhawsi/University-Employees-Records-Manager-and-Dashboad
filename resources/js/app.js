@@ -21,9 +21,10 @@ createInertiaApp({
       }
       return page
     },
-
     setup({ el, app, props, plugin }) {
-        return createApp({ render: () => h(app, props) })
+        return createApp({ 
+            render: () => h(app, props) 
+          })
             .use(plugin)
             .use(Chartkick.use(Highcharts))
             .mixin({ methods: { route } })
