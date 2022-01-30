@@ -111,6 +111,22 @@
             <main class="mt-14 pt-1">
                 <slot />
             </main>
+
+            <footer class="h-12 w-full text-white bg-sky-500 py-3">
+                <div class="flex max-w-2xl mx-auto justify-between">
+                    <div class="px-2">
+                         	&#169; Copyright {{year}} |  
+                            <a href="https://opensource.org/licenses/MIT">
+                                MIT License
+                            </a>
+                    </div>
+                    <div class=""> Desgined & Developed by
+                        <a href="https://twitter.com/ObaidGhawsi" class="underline" target="blank">
+                            Obaidullah Ghawsi
+                        </a>
+                    </div>
+                </div>
+            </footer>
         </div>
     </div>
 </template>
@@ -138,6 +154,7 @@ export default {
     data() {
         return {
             showingNavigationDropdown: false,
+            year: new Date().getFullYear(),
         }
     },
 }
