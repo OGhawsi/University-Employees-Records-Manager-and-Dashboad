@@ -131,11 +131,18 @@
                                             class="w-6 h-6 stroke-current text-gray-400 bg-gray-100 rounded-full p-1 ml-2" />
                                 </Link>
                             </td>
+                            <td v-else class="px-2">
+                                 <icon      name="person" 
+                                            class="w-6 h-6 stroke-current text-gray-400 bg-gray-100 rounded-full p-1 ml-2" />
+                            </td>
                             <td class="" v-if="department.employee">
                                 <Link class=" px-2  focus:text-indigo-500" 
                                         :href="route('employee.show', department.employee.id)">
                                     {{ department.employee.first_name_english }} {{ department.employee.last_name_english }}
                                 </Link>
+                            </td>
+                            <td v-else class="text-gray-500 text-sm p-2">
+                                HOD not found
                             </td>
                             <td class="" v-if="department.employee" >
                                 <div v-if="department.employee.addresses[0]">
@@ -147,13 +154,16 @@
                                     No Mobile
                                 </div>
                             </td>
+                            <td v-else class="text-gray-500 text-sm p-2">
+                               No mobile
+                            </td>
                             <td class="rounded-r-md" v-if="department.email" >
                                 <div v-if="department.email">
-                                    <Link class="px-2 flex items-center focus:text-indigo-500" :href="route('employee.show', department.id)">
+                                    <Link class="px-2 flex items-center focus:text-indigo-500" :href="route('department.edit', department.id)">
                                         {{ department.email}}
                                     </Link>
                                 </div>
-                                <div class="text-gray-400 px-2" v-else>
+                                <div class="text-gray-400 p-2" v-else>
                                     No Email
                                 </div>
                             </td>
