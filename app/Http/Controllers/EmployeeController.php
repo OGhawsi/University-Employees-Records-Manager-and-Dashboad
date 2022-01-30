@@ -46,7 +46,6 @@ class EmployeeController extends Controller
             $departments = Department::where('faculty_id', '=',  request('relatedDepartment'))->get(['id','name']);
         }
 
-
         return Inertia::render('Employee/Create', [
             'faculties' => $faculties,
             'departments' => $departments
@@ -81,7 +80,9 @@ class EmployeeController extends Controller
                
              ])
          );
-         return redirect()->route('employee.show', $employee);
+         return redirect()
+                ->route('employee.show', $employee)
+                ->with(['toast' => ['message' => 'Employee added successfully']]);
        
     }
 
@@ -148,7 +149,8 @@ class EmployeeController extends Controller
                 'status' => ['required'],
             ])
         );
-        return redirect()->route('employee.show', $employee);
+        return redirect()->route('employee.show', $employee)
+            ->with(['toast' => ['message' => 'Employee updated successfully']]);
     }
 
 
@@ -193,7 +195,8 @@ class EmployeeController extends Controller
             'profile_photo_url' => null,
             'profile_photo_path' => null,
         ]);
-        return redirect()->back();
+        return redirect()->back()
+        ->with(['toast' => ['message' => 'Employee removed successfully']]);
     }
    
 }

@@ -62,7 +62,8 @@ class FacultyController extends Controller
                 'university_id' => ['required'],
             ])
         );
-        return redirect()->route('faculty.index', 1);
+        return redirect()->route('faculty.index', 1)
+            ->with(['toast' => ['message' => 'Employment removed successfully']]);
     }
 
     public function edit(Faculty $faculty)
@@ -102,7 +103,8 @@ class FacultyController extends Controller
                 'university_id' => ['required'],
             ])
         );
-        return redirect()->route('faculty.index', $faculty->id);
+        return redirect()->route('faculty.index', $faculty->id)
+            ->with(['toast' => ['message' => 'Faculty updated successfully']]);
     }
     public function destroy(Faculty $faculty)
     {

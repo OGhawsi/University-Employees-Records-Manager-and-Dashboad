@@ -35,7 +35,9 @@ class DepartmentController extends Controller
         ]);
         
         Department::create($validated_data);
-        return redirect()->route('faculty.index', request('faculty_id'))->with(['toast' => ['message' => 'Department added successfully']]);
+        return redirect()
+                ->route('faculty.index', request('faculty_id'))
+                ->with(['toast' => ['message' => 'Department added successfully']]);
     }
 
     public function edit(Department $department)
@@ -86,14 +88,16 @@ class DepartmentController extends Controller
             ])
         );
 
-        return redirect()->route('faculty.index', request('faculty_id'));
+        return redirect()->route('faculty.index', request('faculty_id'))
+            ->with(['toast' => ['message' => 'Department updated successfully']]);;
     }
 
     public function destroy(Department $department)
     {
         $faculty = $department->faculty_id;
         $department->delete();
-        return redirect()->route('faculty.index', $faculty);
+        return redirect()->route('faculty.index', $faculty)
+        ->with(['toast' => ['message' => 'Department removed successfully']]);
     }
 
     // public function search()

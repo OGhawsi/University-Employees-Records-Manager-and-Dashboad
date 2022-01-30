@@ -47,7 +47,8 @@ class RankController extends Controller
 
         $employee->ranks()->attach(request('rank_id'), $data);
        
-        return redirect()->route('employee.show',$employee);
+        return redirect()->route('employee.show',$employee)
+            ->with(['toast' => ['message' => 'Rank added successfully']]);
     
     }
 
@@ -90,7 +91,8 @@ class RankController extends Controller
                                          ->where('rank_id', request('same_rank_id'))
                                          ->update($data);
                                         
-        return redirect()->route('employee.show',$employee->id);
+        return redirect()->route('employee.show',$employee->id)
+            ->with(['toast' => ['message' => 'Rank updated successfully']]);
     
     }
 
@@ -102,7 +104,8 @@ class RankController extends Controller
         // change the current rank tag first then delete
       
         DB::table('employee_rank')->where('id', $pivot)->delete();
-        return redirect()->route('employee.index');
+        return redirect()->route('employee.index')
+            ->with(['toast' => ['message' => 'Rank removed successfully']]);
     }
 
     public function addRank()
@@ -140,6 +143,7 @@ class RankController extends Controller
     public function destroyRank(Rank $rank)
     {
         $rank->delete();
-        return redirect(route('dashboard'));
+        return redirect(route('dashboard'))
+            ->with(['toast' => ['message' => 'Rank removed successfully']]);
     }
 }

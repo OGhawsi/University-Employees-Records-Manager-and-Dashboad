@@ -35,8 +35,6 @@ class DegreeController extends Controller
          Degree::where('employee_id' , $employee->id)
                 ->where('current', true)
                 ->update(['current' => false]);
-
-       
         Degree::create(
             request()->validate([
                'employee_id' => ['max:255','required'],
@@ -55,7 +53,9 @@ class DegreeController extends Controller
                
             ])
         );
-        return redirect()->route('employee.show',$employee);
+        return redirect()
+                ->route('employee.show',$employee)
+                ->with(['toast' => ['message' => 'Degree added successfully']]);
     
     }
 
@@ -100,7 +100,8 @@ class DegreeController extends Controller
                
             ])
         );
-        return redirect()->route('employee.show',request('employee_id'));
+        return redirect()->route('employee.show',request('employee_id'))
+            ->with(['toast' => ['message' => 'Degree updated successfully']]);
     }
 
     /**
@@ -113,6 +114,7 @@ class DegreeController extends Controller
     {
         $id = $degree->employee_id;
         $degree->delete();
-        return redirect()->route('employee.show', $id);
+        return redirect()->route('employee.show', $id)
+                ->with(['toast' => ['message' => 'Degree removed successfully']]);
     }
 }

@@ -1,6 +1,6 @@
 <template>
     <transition name="slide-fade">
-        <div v-if="toast && visible && popstate" class="absolute flex max-w-xs w-full mt-4 mr-4 top-12 right-0 rounded-md shadow-md p-4 bg-white">
+        <div v-if="toast && visible" class="absolute flex max-w-xs w-full mt-4 mr-4 top-12 right-0 rounded-md shadow-md p-4 bg-white">
             <div class="mr-2">
                  <icon name="check-circle" class="text-green-600" />
             </div>

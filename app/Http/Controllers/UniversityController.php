@@ -80,7 +80,8 @@ class UniversityController extends Controller
                 'established' => ['date'],
             ])
             );
-            return redirect()->route('dashboard');
+            return redirect()->route('dashboard')
+                ->with(['toast' => ['message' => 'University updated successfully']]);
     }
 
     /**

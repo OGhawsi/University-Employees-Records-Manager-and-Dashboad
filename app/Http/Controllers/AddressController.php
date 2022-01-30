@@ -33,7 +33,8 @@ class AddressController extends Controller
                
             ])
         );
-        return redirect()->route('employee.show',$employee);
+        return redirect()->route('employee.show',$employee)
+                        ->with(['toast' => ['message' => 'Address added successfully']]);;
     
     }
 
@@ -62,7 +63,9 @@ class AddressController extends Controller
                
             ])
         );
-        return redirect()->route('employee.show', $address->employee_id);
+        return redirect()
+                ->route('employee.show', $address->employee_id)
+                ->with(['toast' => ['message' => 'Address updated successfully']]);;
     
     }
 
@@ -70,6 +73,7 @@ class AddressController extends Controller
     {
         $employee = $address->employee_id;
         $address->delete();
-        return redirect()->route('employee.show', $employee);
+        return redirect()->route('employee.show', $employee)
+                ->with(['toast' => ['message' => 'Address removed successfully']]);
     }
 }

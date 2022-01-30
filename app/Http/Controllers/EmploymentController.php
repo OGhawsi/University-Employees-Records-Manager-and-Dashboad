@@ -39,7 +39,8 @@ class EmploymentController extends Controller
                 'completed' => ['boolean'],
             ])
         );
-        return redirect()->route('employee.show',$employee);
+        return redirect()->route('employee.show',$employee)
+            ->with(['toast' => ['message' => 'Employment added successfully']]);
 
     }
 
@@ -72,7 +73,8 @@ class EmploymentController extends Controller
                 'completed' => ['boolean'],
             ])
         );
-        return redirect()->route('employee.show',$employment->employee_id);
+        return redirect()->route('employee.show',$employment->employee_id)
+            ->with(['toast' => ['message' => 'Employment updated successfully']]);
     }
 
     /**
@@ -85,6 +87,7 @@ class EmploymentController extends Controller
     {
         $employee = $employment->employee_id;
         $employment->delete();
-        return redirect()->route('employee.show', $employee);
+        return redirect()->route('employee.show', $employee)
+            ->with(['toast' => ['message' => 'Employment removed successfully']]);
     }
 }
