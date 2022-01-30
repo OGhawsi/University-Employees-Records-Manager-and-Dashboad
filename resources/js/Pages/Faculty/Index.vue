@@ -68,7 +68,7 @@
                                                             cursor: 'pointer', 
                                                         dataLabels: { enabled: true, format: '<strong>{point.name}:</strong> <i>{point.y}</i>' }, 
                                                         showInLegend: false }}}"
-                                :colors="['#08D7FF', '#803755', '#FF217E', 'red', 'blue', 'orange', 'brown']"  
+                                 :colors="['#FF217E', '#803755', '#CC1B64', '#FF6EAA', '#08D7FF', '#2A7180', '#06ABCC', '#54E3FF']"  
                                 adapter="highcharts" :data="ranks_data">
                         </pie-chart>
                     </div>

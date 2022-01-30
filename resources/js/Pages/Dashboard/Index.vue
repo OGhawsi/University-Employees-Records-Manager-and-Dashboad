@@ -106,7 +106,7 @@
                                                                     cursor: 'pointer', 
                                                                 dataLabels: { enabled: true, format: '<strong>{point.name}:</strong> <i>{point.y}</i>' }, 
                                                                 showInLegend: false }}}"
-                                        :colors="['#08D7FF', '#803755', '#FF217E', 'red', 'blue', 'orange', 'brown']"  
+                                        :colors="['#FF217E', '#803755', '#CC1B64', '#FF6EAA', '#08D7FF', '#2A7180', '#06ABCC', '#54E3FF']"  
                                         adapter="highcharts" :data="ranks_data">
                                 </pie-chart>
                             </div>
@@ -120,7 +120,7 @@
                             <pie-chart class="pt-10"
                                     legend="bottom"
                                     :library="{plotOptions: { pie: {  allowPointSelect: true, cursor: 'pointer', dataLabels: { enabled: false }, showInLegend: true }}}"
-                                    :colors="['#0EA5E9', '#0E8DB1', '#08D7FF']"  
+                                    :colors="['#FF217E', '#08D7FF', '#803755']"  
                                     adapter="highcharts" :data="available_employees_count">
                         </pie-chart>
                     </div>
@@ -139,7 +139,8 @@
                         </div>
                         <column-chart adapter="highcharts"
                                     :data="this.faculty_series"
-                                    :library="{ plotOptions: {column: {pointPadding: 0.2,borderWidth: 0}}}">
+                                    :colors = "[ '#08D7FF']"
+                                    :library="{ plotOptions: {column: {pointPadding: 0.1,borderWidth: 0}}}">
                         </column-chart>
                     </div>
                      <div class="w-1/4 p-6 flex-shrink-0 bg-white rounded-lg">

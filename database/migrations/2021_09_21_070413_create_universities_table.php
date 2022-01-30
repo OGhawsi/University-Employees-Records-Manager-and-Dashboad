@@ -28,7 +28,7 @@ class CreateUniversitiesTable extends Migration
 
         \App\Models\University::create([
             'name' => 'XYZ University',
-            'seats' => '299',
+            'seats' => '589',
             'email' => 'xyz@example.com',
             'established' => '2021-09-21',
         ]);

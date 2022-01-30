@@ -31,7 +31,6 @@ class DatabaseSeeder extends Seeder
                 ->count(5), 'departments')
             ->create();
 
-
             // Academic Ranks Seeder
             $employees = Employee::all('id');
             $ranks = \App\Models\Rank::factory(7)->create();
