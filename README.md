@@ -1,6 +1,7 @@
 ## About the University Employees Record Manager 
 
-This application is built with Laravel, Vue JS, Inertia JS, and Tailwind CSS  to help the administrative staff of the university to find/filter employees' records quickly based on different parameters. 
+This application is built with Laravel, Vue JS, Inertia JS, and Tailwind CSS  to help the administrative staff of the university to find/filter employees' records quickly based on different parameters. Here are some screenshots of the App.  
+![screenshot](https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(10).png)
 
 ## Motivation for building this app
 
