@@ -1,5 +1,12 @@
 ## About the University Employees Record Manager 
 
+## Table of contents
+1. [Motivation for building this app](#Motivation)
+2. [What isn't it?](#What)
+3. [What's it?](#What's)
+4. [Usage & Instalation](#Usage)
+5. [Future Enhancements](#Future)
+6. [Financial Support](#Financial)
 This application is built with Laravel, Vue JS, Inertia JS, and Tailwind CSS  to help the administrative staff of the university to find/filter employees' records quickly based on different parameters. Here are some screenshots of the App.  
 <img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(3).png" alt="screenshot" width="100%"/>
 <img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(4).png" alt="screenshot" width="500" height="300"/>
@@ -25,7 +32,7 @@ So I took this opportunity to show case my web development skills through buildi
 
 This is not a traditional employee management system. This app does not have attendance, classes, subjects or any other sections, that you might expect in an employee management system. 
 
-## What is it?
+## What's it?
 
 This app helps provide employees data through the report section through an easy to use interface. 
 
@@ -60,9 +67,10 @@ The requirements were collected from the Kandahar University only, but this app 
     - Username: `admin@example.com`
     - Password: `password`
 
-### Future Enhancements
+## Future Enhancements
 
 - Adding tests cases
+- Add mobile first css support
 - Adding roles and permisions
 - Adding internationalization support
 - Enhancing the UI
