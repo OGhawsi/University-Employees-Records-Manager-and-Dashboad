@@ -9,20 +9,21 @@
 6. [Financial Support](#Financial)  
 This application is built with Laravel, Vue JS, Inertia JS, and Tailwind CSS  to help the administrative staff of the university to find/filter employees' records quickly based on different parameters. Here are some screenshots of the App.  
 <img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(3).png" alt="screenshot" width="100%"/>
-<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(4).png" alt="screenshot" width="500" height="300"/>
-<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(5).png" alt="screenshot" width="500" height="300"/>
-<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(6).png" alt="screenshot" width="500" height="300"/>
-<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(7).png" alt="screenshot" width="500" height="300"/>
-<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(8).png" alt="screenshot" width="500" height="300"/>
-<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(9).png" alt="screenshot" width="500" height="300"/>
-<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(10).png" alt="screenshot" width="500" height="300"/>
-<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(11).png" alt="screenshot" width="500" height="300"/>
-<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(12).png" alt="screenshot" width="500" height="300"/>
-<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(13).png" alt="screenshot" width="500" height="300"/>
-<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(14).png" alt="screenshot" width="500" height="300"/>
-<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(15).png" alt="screenshot" width="500" height="300"/>
+<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(4).png" alt="screenshot" width="450" height="250"/>
+<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(5).png" alt="screenshot" width="450" height="250"/>
+<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(6).png" alt="screenshot" width="450" height="250"/>
+<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(7).png" alt="screenshot" width="450" height="250"/>
+<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(8).png" alt="screenshot" width="500" height="250"/>
+<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(9).png" alt="screenshot" width="450" height="250"/>
+<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(10).png" alt="screenshot" width="450" height="250"/>
+<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(11).png" alt="screenshot" width="450" height="250"/>
+<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(12).png" alt="screenshot" width="450" height="250"/>
+<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(13).png" alt="screenshot" width="450" height="250"/>
+<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(14).png" alt="screenshot" width="450" height="250"/>
+<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(15).png" alt="screenshot" width="450" height="250"/>
 
 <a name="Motivation"/>
+
 ## Motivation for building this app
 
 Kandahar University, located in Kandahar, Afghanistan, had employees data stored across multiple spreadsheets.   As the university has no budget to spend on app like this, they asked me to help them with their data problem and make a central app for which should enable them to find the records instantly, based on different parameters.
@@ -35,6 +36,7 @@ So I took this opportunity to show case my web development skills through buildi
 This is not a traditional employee management system. This app does not have attendance, classes, subjects or any other sections, that you might expect in an employee management system. 
 
 <a name="What's"/>
+
 ## What's it?
 
 This app helps provide employees data through the report section through an easy to use interface. 
