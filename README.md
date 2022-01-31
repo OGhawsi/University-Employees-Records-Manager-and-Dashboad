@@ -5,8 +5,15 @@ This application is built with Laravel, Vue JS, Inertia JS, and Tailwind CSS  to
 <img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(4).png" alt="screenshot" width="500" height="300"/>
 <img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(5).png" alt="screenshot" width="500" height="300"/>
 <img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(6).png" alt="screenshot" width="500" height="300"/>
-
-
+<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(7).png" alt="screenshot" width="500" height="300"/>
+<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(8).png" alt="screenshot" width="500" height="300"/>
+<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(9).png" alt="screenshot" width="500" height="300"/>
+<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(10).png" alt="screenshot" width="500" height="300"/>
+<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(11).png" alt="screenshot" width="500" height="300"/>
+<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(12).png" alt="screenshot" width="500" height="300"/>
+<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(13).png" alt="screenshot" width="500" height="300"/>
+<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(14).png" alt="screenshot" width="500" height="300"/>
+<img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(15).png" alt="screenshot" width="500" height="300"/>
 
 ## Motivation for building this app
 
