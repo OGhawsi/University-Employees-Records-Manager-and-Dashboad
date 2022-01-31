@@ -57,7 +57,7 @@ The requirements were collected from the Kandahar University only, but this app 
 
 ## Financial Support
 Help the free education sector in Afghanistan through supporting 
-the developer of this app financially with as low as 1 USD. 
+the developer of this app financially with buying me a [coffee] (https://www.buymeacoffee.com/ghawsi) ☕. 
 Thank You. 
 
 ## License
