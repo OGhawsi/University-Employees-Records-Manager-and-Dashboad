@@ -6,7 +6,7 @@
 3. [What's it?](#What's)
 4. [Usage & Instalation](#Usage)
 5. [Future Enhancements](#Future)
-6. [Financial Support](#Financial)
+6. [Financial Support](#Financial)  
 This application is built with Laravel, Vue JS, Inertia JS, and Tailwind CSS  to help the administrative staff of the university to find/filter employees' records quickly based on different parameters. Here are some screenshots of the App.  
 <img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(3).png" alt="screenshot" width="100%"/>
 <img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(4).png" alt="screenshot" width="500" height="300"/>
@@ -22,16 +22,19 @@ This application is built with Laravel, Vue JS, Inertia JS, and Tailwind CSS  to
 <img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(14).png" alt="screenshot" width="500" height="300"/>
 <img src="https://github.com/OGhawsi/University-Employees-Records-Finder/blob/master/public/screenshots/%20(15).png" alt="screenshot" width="500" height="300"/>
 
+<a name="Motivation"/>
 ## Motivation for building this app
 
 Kandahar University, located in Kandahar, Afghanistan, had employees data stored across multiple spreadsheets.   As the university has no budget to spend on app like this, they asked me to help them with their data problem and make a central app for which should enable them to find the records instantly, based on different parameters.
 
 So I took this opportunity to show case my web development skills through building something that can actually help someone.
 
+<a name="What"/>
 ## What isn't it? 
 
 This is not a traditional employee management system. This app does not have attendance, classes, subjects or any other sections, that you might expect in an employee management system. 
 
+<a name="What's"/>
 ## What's it?
 
 This app helps provide employees data through the report section through an easy to use interface. 
@@ -56,6 +59,8 @@ All of the above, are just different CRUD operations connected with each other l
 
 The requirements were collected from the Kandahar University only, but this app can be directly usable by all the universities across Afghanistan, because, all of these universities have the same administrative structure and work under the ministry of higher educations of Afghanistan.
 
+<a name="Usage" />
+
 ## Usage & Instalation 
 - Clone the repository with `git clone`
 - Copy `.env.example` file to `.env` and edit database credentials there
@@ -67,6 +72,8 @@ The requirements were collected from the Kandahar University only, but this app 
     - Username: `admin@example.com`
     - Password: `password`
 
+<a name="Future"/>
+
 ## Future Enhancements
 
 - Adding tests cases
@@ -76,6 +83,7 @@ The requirements were collected from the Kandahar University only, but this app 
 - Enhancing the UI
 - Add vue teleport
 
+<a name="Financial"/>
 ## Financial Support
 Help the free education sector in Afghanistan through supporting 
 the developer of this app financially with buying me a [coffee](https://www.buymeacoffee.com/ghawsi) ☕. 
