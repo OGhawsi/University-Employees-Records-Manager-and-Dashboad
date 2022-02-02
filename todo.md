@@ -23,7 +23,7 @@ TODO:
     [] occupied seats
     [] empty seats
     
-[] add table for those employees who are studing
+[] add table for those employees who are studying
 [] add table for those employees which are working outside
 
 [] preview organigram based on faculties which will show the departments and no of employees etc 

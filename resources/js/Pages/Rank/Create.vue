@@ -49,7 +49,7 @@
           <span class=" font-medium">Research Topic and Date</span>
           <p class="leading-relaxed tracking-wide font-normal pt-2">
             Write the research topic of the employee for the
-			academic rank that the employee is going to acheive.
+			academic rank that the employee is going to achieve.
           </p>
         </div>
         <div class="flex flex-col w-full flex-grow px-8">

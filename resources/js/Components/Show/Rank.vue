@@ -54,12 +54,12 @@
 <script>
 import AddNewButton from '@/Components/AddNewButton.vue';
 import { Link } from '@inertiajs/inertia-vue3';
-import AccademicRank from './AccademicRank.vue';
+import AcademicRank from './AcademicRank.vue';
 import Icon from '@/Components/Icon.vue'
 export default {
     components: {
         AddNewButton,
-        AccademicRank,
+        AcademicRank,
         Link,
         Icon,
     },

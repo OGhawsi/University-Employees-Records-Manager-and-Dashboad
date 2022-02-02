@@ -22,7 +22,7 @@ class RankController extends Controller
     public function store(Employee $employee)
     {
         // update the previous ranks not to be the current one only if the new rank is
-        // acheived by the completion date. 
+        // achieved by the completion date. 
 
         if (request('completion_of_academic_research')) {
             DB::table('employee_rank')
@@ -66,7 +66,7 @@ class RankController extends Controller
     public function update(Employee $employee)
     {
         // update the previous ranks not to be the current one only if the new rank is
-        // acheived by the completion date. 
+        // achieved by the completion date. 
 
         $data = request()->validate([
             'subject_of_academic_research' => ['required','max:255'], 
