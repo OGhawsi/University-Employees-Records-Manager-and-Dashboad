@@ -120,7 +120,7 @@
                                 MIT License
                             </a>
                     </div>
-                    <div class=""> Desgined & Developed by
+                    <div class=""> Designed &amp; Developed by
                         <a href="https://twitter.com/ObaidGhawsi" class="underline" target="blank">
                             Obaidullah Ghawsi
                         </a>

@@ -104,7 +104,7 @@
             </td>
             <td>
                 @if ($emp->status === 1)
-                        Avaliable
+                        Available
                     @elseif ($emp->gender === 2)
                         Working Outside
                     @else 

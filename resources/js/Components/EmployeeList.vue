@@ -37,7 +37,7 @@
                         </Link>
                     </td>
                     <td class="" v-else>
-                        <div class="px-4 py-3 text-gray-400">Department not choosen</div>
+                        <div class="px-4 py-3 text-gray-400">Department not chosen</div>
                     </td>
                     <td class="" v-if="employee.working_department.faculty">
                         <Link class="px-4 py-3 flex items-center focus:text-indigo-500" :href="route('employee.show', employee.id)">

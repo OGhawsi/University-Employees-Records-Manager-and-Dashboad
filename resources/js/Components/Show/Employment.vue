@@ -29,7 +29,7 @@
                     </td>
                     <td class="border-t px-6 py-2">
                         <Link :href="route('employment.edit', employment.id)" class=" focus:text-indigo-500">
-                            <accademic-rank :rank="employment" />
+                            <academic-rank :rank="employment" />
                         </Link>
                     </td>
                     <td class="border-t px-6 py-2">
@@ -50,11 +50,11 @@
 <script>
 import AddNewButton from '@/Components/AddNewButton.vue';
 import { Link } from '@inertiajs/inertia-vue3';
-import AccademicRank from './AccademicRank.vue';
+import AcademicRank from './AcademicRank.vue';
 export default {
     components: {
         AddNewButton,
-        AccademicRank,
+        AcademicRank,
         Link,
     },
     props: {

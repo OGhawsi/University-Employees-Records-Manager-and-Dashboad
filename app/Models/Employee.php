@@ -28,7 +28,7 @@ class Employee extends Model
     const WORKING = 2;
     const STUDYING = 3;
 
-    public function universtiy()
+    public function university()
     {
         return $this->belongsTo(University::class);
     }
