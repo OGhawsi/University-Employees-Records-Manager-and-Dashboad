@@ -24,7 +24,7 @@ This is not a traditional employee management system. This app does not have att
 
 <a name="What's"/>
 
-## What's it?
+## What is it?
 
 This app helps provide employees data through the report section through an easy to use interface. 
 
